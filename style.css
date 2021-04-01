@@ -1,4 +1,101 @@
-body {background-color:tan;}
-h1{color:green;}
+html {
+  box-sizing: border-box;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: none;
+}
+
+body {
+  background-color: black;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: grey;
+  font-family: 'Verdana', sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 0;
+  font-size: smaller;
+}
+
+form {
+  line-height: 2rem;
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+
+.line-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+label {
+  width: 110px;
+}
+
+.second-column {
+  width: 190px;
+  font-size: 12px;
+}
+
+#rate {
+  margin: 0px;
+  outline: none;
+  transition: opacity .2s;
+}
+
+.range-p {
+  font-size: smaller;
+}
+
+.maindiv {
+  background-color: white;
+  color: black;
+  width: 400px;
+  padding: 20px;
+  border-radius: 25px;
+  align-self: center;
+  margin: 2rem auto;
+}
+
+button {
+  font-size: 10px;
+  width: 100px;
+}
+
+#range-p {
+  color: #000;
+}
+
+.results {
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 1rem auto;
+  position: relative;
+}
+
+.maindiv .results.hide {
+  display: none;
+}
+
+mark {
+  margin-left: 0.3125rem;
+}
