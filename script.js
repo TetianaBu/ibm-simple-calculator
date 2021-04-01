@@ -16,20 +16,25 @@ slider.oninput = function () {
 
 function calculateResults(e) {
   const p = parseFloat(PRINCIPAL.value);
-  const r = parseFloat(slider.value);
-  const t = parseFloat(YEARS.value);
-  const interest = (p * t * r) / 100;
-  const total = (interest + p).toFixed(2);
-  const dateNow = new Date();
-  const calculateYear = parseInt(dateNow.getFullYear()) + parseInt(YEARS.value);
-  if (isFinite(total)) {
-    CLIENT_DEPOSIT.innerHTML = `If you deposit <mark>${p}$</mark>`;
-    TOTAL_INTERES.innerHTML = `at an interest rate of <mark>${r}%</mark>`;
-    TOTAL_AMOUNT.innerHTML = `You will receive an amount of <mark>${total}$</mark>`;
-    TIME.innerHTML = `in the year <mark>${calculateYear}</mark>`;
-    results.classList.remove('hide');
+  if (p <= 0) {
+    return alert('Please enter a positive number');
   } else {
-    alert('Please check your numbers and try again.');
+    const r = parseFloat(slider.value);
+    const t = parseFloat(YEARS.value);
+    const interest = (p * t * r) / 100;
+    const total = (interest + p).toFixed(2);
+    const dateNow = new Date();
+    const calculateYear =
+      parseInt(dateNow.getFullYear()) + parseInt(YEARS.value);
+    if (isFinite(total)) {
+      CLIENT_DEPOSIT.innerHTML = `If you deposit <mark>${p}$</mark>`;
+      TOTAL_INTERES.innerHTML = `at an interest rate of <mark>${r}%</mark>`;
+      TOTAL_AMOUNT.innerHTML = `You will receive an amount of <mark>${total}$</mark>`;
+      TIME.innerHTML = `in the year <mark>${calculateYear}</mark>`;
+      results.classList.remove('hide');
+    } else {
+      alert('Please fill out all required fields.');
+    }
   }
 }
 
