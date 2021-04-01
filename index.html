@@ -1,16 +1,75 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <script src="script.js"></script>
+
+<head>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+</head>
+
+<body>
+    <div class="maindiv">
+
         <h1>Simple Interest Calculator</h1>
+        <div class="form-handler">
+            <form id="calculate">
+                <div class="line-flex">
+                    <label>Amount</label>
+                    <div class="second-column">
+                        <input type="number" id="principal"><br />
+                    </div>
+                </div>
+                <div class="line-flex">
+                    <label>Rate</label>
+                    <div class="second-column slider-container">
+                        <input type="range" id="rate" min="0" max="20" value="10.25" step="0.25" class="slider">
+                        <span id="range-p"></span>%
+                    </div>
+                    <br />
+                </div>
+                <div class="line-flex">
+                    <label for="years">No. of Years</label>
+                    <div class="second-column">
+                        <select name="years" id="years">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <br />
+                </div>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+                <button onclick="calculateResults()" class="button">Compute Interest</button> <span id="result">
+        </div>
+        </form>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+        <div class="results hide">
+            <div class="client-deposit">
+                <span id="deposit"></span>
+            </div>
+            <div class="interest-rate">
+                <span id="interest"></span>
+            </div>
+            <div class="total-amount">
+                <span id="total"></span>
+            </div>
+            <div class="time">
+                <span id="time"></span>
+            </div>
+        </div>
+
+        <footer>
+            <p> &#169; Everyone Can Get Rich</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
